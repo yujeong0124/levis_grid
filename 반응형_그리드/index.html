@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border;
+        }
+
+         /* 1. web일때 web이미지를 보여준다. 대신, 타블렛 모바일은 이미지 안보인다.
+        2. 타블렛일때 타블렛 이미지를 보여준다. 대신, 웹 모바일 안보인다.
+        3. 모바일일떄는 모바일 이미지 보여준다. 대신, 웹 타블렛을 안보여준다. */
+
+        .portfolio{
+            width: 100%;
+            display: none;
+        }
+        
+        /* min width : ~까지 보여준다.
+        max width : ~부터 보여준다. */
+
+        @media screen and (min-width: 1024px){
+            .portfolio.web {
+                display: block;
+            }
+        }
+        @media screen and (min-width: 769px) and (max-width: 1023px){
+            .portfolio.tablet {
+                display: block;
+             }
+        }
+
+        @media screen and (max-width: 768px){
+            .portfolio.mobile {
+                display: block;
+             }
+        }
+
+    </style>
+
+    <main>
+        <img class="portfolio web" src="./images/web.jpg"/>
+        <img class="portfolio tablet" src="./images/tablet.jpg"/>
+        <img class="portfolio mobile" src="./images/mobile.jpg"/>
+    </main>
+</body>
+</html>
